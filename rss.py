@@ -19,7 +19,7 @@ try:
     feed_urls = list(set(i for i in os.environ.get("https://torrentgalaxy.to/rss").split("|")))  # RSS Feed URL of the site.
     bot_token = os.environ.get("1990973304:AAFN5Q1ipAq_yXQEKZzZkp_3ESjFAEbKw_I")   # Get it by creating a bot on https://t.me/botfather
     log_channel = int(os.environ.get("1549698452"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
-    check_interval = int(os.environ.get(10))   # Check Interval in seconds.  
+    check_interval = int(os.environ.get("10"))   # Check Interval in seconds.  
      # Max parallel instance to be used.
 except Exception as e:
     print(e)
