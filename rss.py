@@ -14,12 +14,12 @@ if os.path.exists("config.env"):
 
 
 try:
-    api_id = (os.environ.get("7813983"))   # Get it from my.telegram.org
+    api_id = int(os.environ.get("7813983"))   # Get it from my.telegram.org
     api_hash = os.environ.get("7fcb99e18f3cf518bae65edf700300eb")   # Get it from my.telegram.org
-    feed_urls = list(set(i for i in os.environ.get("https://torrentgalaxy.to/rss").split("|")))  # RSS Feed URL of the site.
+    feed_urls = list(set(i for i in os.environ.get("https://torrentgalaxy.to/rss")))  # RSS Feed URL of the site.
     bot_token = os.environ.get("1990973304:AAFN5Q1ipAq_yXQEKZzZkp_3ESjFAEbKw_I")   # Get it by creating a bot on https://t.me/botfather
-    log_channel = (os.environ.get("1549698452"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
-    check_interval = (os.environ.get("10"))   # Check Interval in seconds.  
+    log_channel = int(os.environ.get("1549698452"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
+    check_interval = int(os.environ.get("10"))   # Check Interval in seconds.  
      # Max parallel instance to be used.
 except Exception as e:
     print(e)
