@@ -52,9 +52,9 @@ def create_feed_checker(feed_url):
             elif "Porn" in entry.link:
                 message = f"Hidden Naughty Stuff"
             elif "limetorrents.pro" in entry.link:
-                message = f"/mirror {entry.torrent_magneturi} \n\nTitle ⏩ {entry.title}"
+                message = f"/mirror {entry.enclosure_url} \n\nTitle ⏩ {entry.title}"
             else:
-                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \nSize⏩ {entry.size}"
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title}"
             try:
                 msg = app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
