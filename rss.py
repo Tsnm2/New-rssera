@@ -52,7 +52,7 @@ def create_feed_checker(feed_url):
             elif "Porn" in entry.link:
                 message = f"Hidden Naughty Stuff"
             else:
-                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title}"
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \nSize⏩ {entry.size}"
             try:
                 msg = app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
