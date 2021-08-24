@@ -14,13 +14,13 @@ if os.path.exists("config.env"):
 
 
 try:
-    api_id = int(os.environ.get("7813983"))   # Get it from my.telegram.org
-    api_hash = os.environ.get("7fcb99e18f3cf518bae65edf700300eb")   # Get it from my.telegram.org
-    feed_urls = list(set(i for i in os.environ.get("https://torrentgalaxy.to/rss")))  # RSS Feed URL of the site.
-    bot_token = os.environ.get("1990973304:AAFN5Q1ipAq_yXQEKZzZkp_3ESjFAEbKw_I")   # Get it by creating a bot on https://t.me/botfather
-    log_channel = int(os.environ.get("1549698452"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
-    check_interval = int(os.environ.get("3"))   # Check Interval in seconds.  
-     # Max parallel instance to be used.
+    api_id = int(os.environ.get("API_ID"))   # Get it from my.telegram.org
+    api_hash = os.environ.get("API_HASH")   # Get it from my.telegram.org
+    feed_urls = list(set(i for i in os.environ.get("FEED_URLS").split("|")))  # RSS Feed URL of the site.
+    bot_token = os.environ.get("BOT_TOKEN")   # Get it by creating a bot on https://t.me/botfather
+    log_channel = int(os.environ.get("LOG_CHANNEL"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
+    check_interval = int(os.environ.get("INTERVAL", 10))   # Check Interval in seconds.  
+    max_instances = int(os.environ.get("MAX_INSTANCES", 3))
 except Exception as e:
     print(e)
     print("One or more variables missing Re Deva. Exiting !")
