@@ -41,9 +41,14 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            message = f"**/mirror@Gojo_mirror_bot {entry.link}**\n```{entry.title}```"
+            if "eztv.re" in entry.link:   
+                message = f"/mirror {entry.torrent_magneturi}"
+            elif "yts.mx" in entry.id:
+                message = f"/mirror {entry.links[1]['href']}"
+            else:
+                message = f"/mirror {entry.link}"
             try:
-                app.send_message(log_channel, message)
+                msg = app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
             except FloodWait as e:
                 print(f"FloodWait: {e.x} seconds")
