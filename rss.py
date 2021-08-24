@@ -51,7 +51,7 @@ def create_feed_checker(feed_url):
             except Exception as e:
                 print(e)
         else:
-            print(f"Checked RSS FEED: {entry.id}")
+            print(/mirror f"Checked RSS FEED: {entry.id}")
     return check_feed
 
 
