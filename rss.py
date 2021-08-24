@@ -48,7 +48,7 @@ def create_feed_checker(feed_url):
             elif "GalaXXXy" in entry.link:
                 message = f"Naughty"
             else:
-                message = f"/mirror {entry.link} {entry.title}"
+                message = f"/mirror {entry.link} \n\n\n{entry.title}"
             try:
                 msg = app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
