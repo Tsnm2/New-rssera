@@ -45,8 +45,6 @@ def create_feed_checker(feed_url):
                 message = f"/mirror {entry.torrent_magneturi} \n\nTitle ⏩ {entry.title}"
             elif "yts.mx" in entry.link:
                 message = f"/mirror {entry.links[1]['href']} \n\nTitle ⏩ {entry.title}"
-            elif "limetorrents.pro" in entry.link:
-                message = f"/mirror {entry.enclosure} \n\nTitle ⏩ {entry.title}"
             else:
                 message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title}"
             try:
