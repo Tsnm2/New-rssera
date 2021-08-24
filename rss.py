@@ -45,9 +45,12 @@ def create_feed_checker(feed_url):
                 message = f"/mirror {entry.torrent_magneturi} \n\nTitle ⏩ {entry.title}"
             elif "yts.mx" in entry.id:
                 message = f"/mirror {entry.links[1]['href']} \n\nTitle ⏩ {entry.title}"
-            elif "GalaXXXy"+"XXX"+"Porn" in entry.link:
+            elif "GalaXXXy" in entry.link:
                 message = f"🥵Hidden Naughty Stuff"
-            else:
+            elif "XXX" in entry.link:
+                message = f"🥵Hidden Naughty Stuff"
+            elif "Porn" in entry.link:
+                message = f"🥵Hidden Naughty Stuff"         else:
                 message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title}"
             try:
                 msg = app.send_message(log_channel, message)
