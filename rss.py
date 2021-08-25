@@ -46,11 +46,13 @@ def create_feed_checker(feed_url):
             elif "yts.mx" in entry.link:
                 message = f"/mirror {entry.links[1]['href']} \n\nTitle ⏩ {entry.title} \n\n⚠️ YTS"
             elif "rarbg" in entry.link:
-                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️RARBG"
-
-
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ RARBG"
+            elif "watercache" in entry.link:
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ TorrentGalaxy"
+            elif "limetorrents.pro" in entry.link:
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ LimeTorrents"
             else:
-                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title}"
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ ThePirateBay"
             try:
                 msg = app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
