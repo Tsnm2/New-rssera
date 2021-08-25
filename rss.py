@@ -51,6 +51,10 @@ def create_feed_checker(feed_url):
                 message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ TorrentGalaxy"
             elif "limetorrents.pro" in entry.link:
                 message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ LimeTorrents"
+            elif "etorrent.click" in entry.link:
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ ETorTV"
+            elif "x265" in entry.title:
+                message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ x265Tor"
             else:
                 message = f"/mirror {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ ThePirateBay"
             try:
